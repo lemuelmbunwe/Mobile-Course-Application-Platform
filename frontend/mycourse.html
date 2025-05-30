@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Courses | Educate-Me</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .main-content {
+      padding: 2rem;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .course-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .course-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .course-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #ecf0f1;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎓 My Courses</h1>
+    <a href="dashboard.html" style="color: white; text-decoration: none;">← Back to Dashboard</a>
+  </header>
+
+  <main class="main-content">
+    <div class="courses-grid" id="coursesContainer">
+      <!-- JS will populate this -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Educate-Me. All rights reserved.
+  </footer>
+
+  <!-- <script>
+    // Simulate enrolled courses (this would come from a backend in real apps)
+    const enrolledCourses = [
+      { title: 'Chemistry', image: 'asset/new1/chimie.png', desc: 'Explore chemical reactions and more.' },
+      { title: 'Computer Science', image: 'asset/new1/info1.jpg', desc: 'Learn programming and IT skills.' },
+      { title: 'Mathematics', image: 'asset/new1/info2.webP', desc: 'Improve your logic and equations.' },
+      { title: 'Physics', image: 'asset/new1/info3.jpg', desc: 'Understand forces and motion.' }
+    ];
+
+    const container = document.getElementById('coursesContainer');
+
+    enrolledCourses.forEach(course => {
+      const card = document.createElement('div');
+      card.className = 'course-card';
+      card.innerHTML = `
+        <img src="${course.image}" alt="${course.title}" />
+        <h3>${course.title}</h3>
+        <p>${course.desc}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script> -->
+  <script>
+  const enrolledCourses = [
+    { title: 'Chemistry', image: 'asset/new1/chimie.png', desc: 'Explore chemical reactions and more.', link: 'chemistry.html' },
+    { title: 'Computer Science', image: 'asset/new1/info1.jpg', desc: 'Learn programming and IT skills.', link: 'computer.html' },
+    { title: 'Mathematics', image: 'asset/new1/info2.webP', desc: 'Improve your logic and equations.', link: 'mathematics.html' },
+    { title: 'Physics', image: 'asset/new1/info3.jpg', desc: 'Understand forces and motion.', link: 'physics.html' }
+  ];
+
+  const container = document.getElementById('coursesContainer');
+
+  enrolledCourses.forEach(course => {
+    const card = document.createElement('div');
+    card.className = 'course-card';
+
+    card.innerHTML = `
+      <a href="${course.link}">
+        <img src="${course.image}" alt="${course.title}" />
+      </a>
+      <h3>${course.title}</h3>
+      <p>${course.desc}</p>
+    `;
+
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>

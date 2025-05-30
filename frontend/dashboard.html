@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard | Educate-Me</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Educate-Me</h2>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">🏠 Dashboard</a></li>
+          <li><a href="mycourse.html">📚 My Courses</a></li>
+          <li><a href="#">📝 Assignments</a></li>
+          <li><a href="setting.html">⚙️ Settings</a></li>
+          <li><a href="student.html">🚪 Back</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Welcome, Student</h1>
+        <div class="profile-icon">👤</div>
+      </header>
+
+      <section class="overview">
+        <div class="card">
+          <h3>Total Courses</h3>
+          <p>6 Enrolled</p>
+        </div>
+        <div class="card">
+          <h3>Assignments</h3>
+          <p>3 Due</p>
+        </div>
+        <div class="card">
+          <h3>Overall Progress</h3>
+          <p>65% Completed</p>
+        </div>
+      </section>
+
+      <section class="progress-section">
+        <h2>My Progress</h2>
+        <div class="progress-list" id="progressList">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="dashboard.js">
+    const progressData = [
+  { course: 'Chemistry', progress: 75 },
+  { course: 'Computer', progress: 90 },
+  { course: 'Mathematics', progress: 60 },
+  { course: 'Physics', progress: 50 },
+  { course: 'Mobile Communication', progress: 40 },
+  { course: 'Database', progress: 80 },
+];
+
+function loadProgress() {
+  const container = document.getElementById('progressList');
+  progressData.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'progress-item';
+    div.innerHTML = `
+      <h4>${item.course}</h4>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" style="width: ${item.progress}%;"></div>
+      </div>
+      <p>${item.progress}% completed</p>
+    `;
+    container.appendChild(div);
+  });
+}
+
+window.onload = loadProgress;
+
+  </script>
+</body>
+</html>

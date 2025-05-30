@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings | Educate-Me</title>
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #000;
+      --card-bg: #fff;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f4f4f4;
+      --card-bg: #1e1e1e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .dashboard {
+      display: flex;
+      width: 100%;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #1a1a40;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .sidebar li a.active,
+    .sidebar li a:hover {
+      background-color: #292961;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .settings-section {
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      margin-bottom: 20px;
+      transition: background 0.3s ease;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Educate-Me</h2>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">🏠 Dashboard</a></li>
+          <li><a href="mycourse.html">📚 My Courses</a></li>
+          <li><a href="#">📝 Assignments</a></li>
+          <li><a href="#" class="active">⚙️ Settings</a></li>
+          <li><a href="student.html">🚪 Back</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Settings</h1>
+        <div class="profile-icon">👤</div>
+      </header>
+
+      <section class="settings-section">
+        <div class="card">
+          <h3>Appearance</h3>
+          <label>
+            <input type="checkbox" id="darkToggle">
+            Enable Dark Mode
+          </label>
+        </div>
+        <div class="card">
+          <h3>Account Info</h3>
+          <p>Email: student@example.com</p>
+          <p>Membership: Free Plan</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const darkToggle = document.getElementById('darkToggle');
+
+    // Load saved preference
+    window.onload = () => {
+      const darkMode = localStorage.getItem('darkMode') === 'true';
+      document.body.classList.toggle('dark', darkMode);
+      darkToggle.checked = darkMode;
+    };
+
+    // Toggle event
+    darkToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark', darkToggle.checked);
+      localStorage.setItem('darkMode', darkToggle.checked);
+    });
+  </script>
+</body>
+</html>

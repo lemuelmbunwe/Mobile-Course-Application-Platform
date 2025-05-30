@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile | Educate-Me</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <div class="profile-container">
+    <h2>My Profile</h2>
+    <button class="edit-btn">Edit</button>
+
+    <form id="profile-form">
+      <input type="text" id="username" placeholder="Username" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="text" id="country" placeholder="Country" />
+      <input type="text" id="region" placeholder="Region" />
+
+      <select id="Language">
+        <option value="">Select language</option>
+        <option value="English">English</option>
+        <option value="French">French</option>
+      </select>
+
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+
+      <div class="buttons">
+        <button type="button" class="cancel-btn" onclick="cancelEdit()">Cancel</button>
+        <button type="submit" class="done-btn">Done</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const formElements = document.querySelectorAll('#profile-form input, #profile-form select');
+    const editBtn = document.querySelector('.edit-btn');
+
+    editBtn.addEventListener('click', () => {
+      formElements.forEach(el => el.disabled = false);
+    });
+
+    function cancelEdit() {
+      formElements.forEach(el => el.disabled = true);
+    }
+
+    document.getElementById('profile-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const role = document.getElementById('role').value;
+
+      if (role === 'student') {
+        window.location.href = 'student.html';
+      } else if (role === 'teacher') {
+        window.location.href = 'teacher.html';
+      } else {
+        alert('Please select a valid role before submitting.');
+      }
+    });
+  </script>
+</body>
+</html>

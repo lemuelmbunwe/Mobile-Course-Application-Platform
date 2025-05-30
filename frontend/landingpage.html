@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Educate-Me</title>
+  <link rel="stylesheet" href="landingpage.css"/>
+</head>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo"><div class="logo1" onclick="toggleMenu()">☰</div><di>Educate-Me</di></div>
+        <div class="search-container">
+      <input type="text" id="search" placeholder="Search courses..."/>
+      <button onclick="searchCourses()">Search</button>
+    </div>
+  
+      <div class="menu-icons">
+        <div class="profile-icon"><a href="student.html"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#fff"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg></a></div>
+      </div>
+    </nav>
+   </header>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#">Course Catalog</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Partner</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+
+  <main>
+    <section class="main-content">
+      <div class="input1">
+      <h2>Learn Without Limits</h2>
+      <p>Discover thousands of courses, develop new skills, and achieve your<br> learning goals with our  platform.</p>
+    </div>
+    </section>
+    <div class="twobox">
+      <div class="first">
+       <a href="#">Recommendations</a>
+      </div>
+       
+    </div>
+     
+     <section id="boxgrid">
+      <div class="courses">
+        <div class="iterm1">
+          <img src="asset/new1/chimie.png" alt="chim" class="img1"><br>
+          <h3>Chemistry</h3>
+           <button class="btn2">Enroll</button>
+         </div>
+        <div class="iterm2">
+          <img src="asset/new1/info1.jpg" alt="informatique" class="img2"><br>
+           <h3>Computer</h3>
+           <button class="btn2">Enroll</button>
+        </div>
+        
+        <div class="iterm3">
+          <img src="asset/new1/info2.webP" alt="maths" class="img3"><br>
+           <h3>Mathematics</h3>
+           <button class="btn2">Enroll</button>
+        </div>
+        <div class="iterm4">
+          <img src="asset/new1/info3.jpg" alt="physique" class="img4"><br>
+          <h3>Physics</h3>
+          <button class="btn2">Enroll</button>
+         </div>
+        <div class="iterm5">
+          <img src="asset/new1/info4.jpg" alt="mobile" class="img5"><br>
+          <h3>Mobile<br>Communication</h3>
+          <button class="btn2">Enroll</button>
+        </div>
+        <div class="iterm6">
+          <img src="asset/new1/database.webp" alt="databes" class="img6"><br>
+          <h3>Database</h3>
+          <button class="btn2">Enroll</button>
+        </div>
+      </div>
+      </section>
+    
+
+    <section class="boxes">
+      <div class="box" id="myCourses">
+        <h3>My Courses</h3>
+        <p>You haven’t enrolled in any course yet.</p>
+      </div>
+   </section>
+      <section>
+      <div class="box" id="allCourses">
+        <h3>Courses</h3>
+        <ul>
+          <li>Chemistry</li>
+          <li>Computer</li>
+          <li>Mathematics</li>
+          <li>Physics</li>
+          <li>Mobile Communication</li>
+          <li>Database</li>
+        </ul>
+      </div>
+      </section>
+    
+    <!-- Modal Popup -->
+ <div class="modal" id="welcomeModal">
+  <div class="modal-content">
+    <h2>Welcome to Educate-Me</h2>
+    <p>Would you like to continue as a guest or sign in?</p>
+    <div class="modal-buttons">
+      <button onclick="continueAsGuest()">Continue as Guest</button>
+      <button onclick="redirectToSignIn()">Sign In</button>
+    </div>
+  </div> 
+</div>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

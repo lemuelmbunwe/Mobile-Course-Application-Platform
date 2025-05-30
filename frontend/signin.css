@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #d6e6f2, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.signin-container {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.brand {
+  color: #2e86de;
+}
+
+.google-btn {
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  position: relative;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color: #ccc;
+  top: 50%;
+  width: 45%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.signin-btn {
+  padding: 0.8rem;
+  background-color: #2e86de;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.signin-btn:hover {
+  background-color: #1b4f72;
+}
+
+.links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: #2e86de;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}

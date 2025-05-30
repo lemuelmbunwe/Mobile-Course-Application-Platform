@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+header{
+    position: fixed;
+    width: 100%;
+    background-color: rgba(17, 33, 49, 0.945);
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    margin: 20px;
+    color:#e1e2e4;
+    font-weight: bold;
+    font-size: 2.3em;
+}
+.navlink{
+    position: relative;
+}
+
+.listlink{
+    display: inline-flex;
+    margin-top: 30px;
+    margin-right: 40px;
+}
+.listlink li{
+ margin-right: 20px;
+ list-style: none;
+}
+.listlink a{
+    position: relative;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 4px;
+    border-radius: 10px;
+    color: white;
+}
+.listlink a:link{
+    color:white;
+}
+.listlink a:visited{
+    color:white;
+}
+
+.listlink a:hover{
+    background-color: dodgerblue;
+    color: white;
+}
+.listlink a:active{
+    color: rgb(13, 48, 112);
+    font-weight:bold;
+    border-bottom: 2px solid rgb(54, 9, 90);
+}
+/* input1 style */
+#input1{
+   .show{ background-image: linear-gradient(rgba(255, 255, 255, 0.171),rgba(30, 143, 255, 0.219));
+    border-radius: 40px;   
+}
+    width: 100%;
+    min-height:100vh;
+    justify-items: center;
+    align-content: center;
+    background-image: url("asset/6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#input1 h2{
+    font-weight: bold;
+    font-size: 4em;
+    color:white;
+}
+#input1 p{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.5rem;
+    color:white;
+    font-weight: bold;
+    
+}
+.btn1{
+    display: flex;
+    margin-top:14rem;
+    background-image: linear-gradient(to top,rgba(0, 0, 49, 0.952),rgb(13, 131, 250));
+    padding: 1em;
+    font-size:2em;
+    text-decoration: none;
+    color: white;
+    border-radius: 100px;
+    border: 4px solid white;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow:40px 0 100px dodgerblue, -40px 0 100px white;
+}
+.btn1:hover{
+ transform: scale(1.2);
+ border: 4px solid dodgerblue;
+ color:white;
+}
+/* input2 style */
+#input2{
+    min-height: 400px;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 20px;
+    min-height:400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit,minmax(330px,1fr));
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+    
+}
+.container div{
+    
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 5px 0 10px black;
+    color: white;
+    transition: transform 0.2s ease;
+}
+.container div:hover{
+    transform: scale(1.04);
+}
+.container div svg{
+    background-color: rgba(14, 26, 78, 0.582);
+    border-radius: 50%;
+    margin-top: 15px;
+    
+}
+.container div h3{
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+.item1, .item2, .item3{
+    p{
+        margin-bottom: 30px;
+        margin-top: 10px;
+        font-size: 1.3rem;
+    }
+}
+.container a{
+    text-decoration: none;
+    margin-top: 20px;
+    background-color: rgb(1, 22, 44);
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    border-radius: 15px;
+    color: white;
+    border: 3px solid dodgerblue;
+}
+.item1, .item2, .item3{
+    background-image:linear-gradient(rgb(235, 231, 231),rgb(9, 46, 83));
+}
+footer{
+    min-height: 100px;
+    background-color: rgb(17, 33, 49);
+    color: white;
+    text-align: center;
+    padding-top: 1.3rem;
+    h3{
+     font-weight: bold;
+     font-size: 1.4rem;
+     margin-bottom: 10px;
+    }
+   p{
+    margin-top: 10px;
+    font-size: 1.2rem;
+   }
+}
+/* Popup Overlay */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color:rgba(0, 0, 0, 0) ;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup Box */
+.popup-content {
+  background:white;
+  padding: 25px;
+  border-radius: 10px;
+   width: min(400px, 90%);
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
